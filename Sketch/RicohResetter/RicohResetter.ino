@@ -209,7 +209,7 @@ void display_dump_info(int index)
 {
   char message[17] = "";
 
-  Struct_DB* row = &Database[index];
+  const Struct_DB* row = &Database[index];
 
 
   lcd.clear();
@@ -287,7 +287,7 @@ void firmware_chip_with_timer(int dump_index, int timer)
   byte eeprom_address;
   if (search_chip_address(eeprom_address))
   {
-    Struct_DB* row = &Database[dump_index];
+    const Struct_DB* row = &Database[dump_index];
     int dump_size = row->dump_size; 
     
     byte dump_data[dump_size];  // Создаем в ОЗУ массив под дамп
